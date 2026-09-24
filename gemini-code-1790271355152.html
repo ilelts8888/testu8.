@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST FOR UNIT 8 - BÀI KIỂM TRA TỔNG HỢP (50 CÂU) - Ms Lê Hằng English</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatPattern {
+            from { background-position: 0 0; }
+            to { background-position: 120px 240px; }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        body {
+            font-family: 'Quicksand', 'Nunito', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #8854C0, #FDCB6E, #00C9A7, #FF7675);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
+            padding: 24px 12px;
+            position: relative;
+            color: #2D3748;
+            overflow-x: hidden;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cg fill='%23ffffff' fill-opacity='0.22'%3E%3Cpath d='M11 18l3 6 6 3-6 3-3 6-3-6-6-3 6-3z'/%3E%3Cpath d='M70 60l2 4 4 2-4 2-2 4-2-4-4-2 4-2z'/%3E%3Ccircle cx='40' cy='70' r='5'/%3E%3Ccircle cx='80' cy='20' r='6'/%3E%3Cpath d='M45 20c-3 0-5 2-5 5s2 5 5 5 5-2 5-5-2-5-5-5z'/%3E%3C/g%3E%3C/svg%3E");
+            animation: floatPattern 20s linear infinite;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .teacher-badge {
+            display: inline-block;
+            background: #ffffff;
+            color: #8854C0;
+            font-size: 0.95rem;
+            font-weight: 800;
+            padding: 8px 24px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .main-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-bottom: 6px;
+        }
+
+        .warning-box {
+            background: #FFF3BF;
+            border: 3px dashed #FAB005;
+            border-radius: 20px;
+            padding: 18px 22px;
+            text-align: center;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .warning-title {
+            color: #D9480F;
+            font-weight: 900;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .warning-text {
+            color: #495057;
+            font-size: 0.98rem;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .warning-highlight {
+            color: #E67E22;
+            font-weight: 900;
+            margin-top: 6px;
+            display: block;
+            font-size: 1.05rem;
+        }
+
+        .section-header-title {
+            background: #2D3748;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1.2rem;
+            padding: 12px 20px;
+            border-radius: 16px;
+            margin: 35px 0 18px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .question-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 26px 30px;
+            margin-bottom: 26px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transition: transform 0.2s ease;
+        }
+
+        .question-card.shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .question-number {
+            background: #8854C0;
+            color: white;
+            font-weight: 900;
+            font-size: 1rem;
+            padding: 6px 16px;
+            border-radius: 14px;
+            margin-right: 12px;
+            box-shadow: 0 3px 0 #5f3396;
+            flex-shrink: 0;
+        }
+
+        .question-instruction {
+            font-weight: 800;
+            color: #4A5568;
+            font-size: 0.95rem;
+        }
+
+        .question-text {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #2D3748;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            white-space: pre-line;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: #F7FAFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 14px 20px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #2D3748;
+            cursor: pointer;
+            box-shadow: 0 5px 0 #CBD5E0;
+            transition: all 0.15s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 8px 0 #CBD5E0;
+            background-color: #EDF2F7;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #CBD5E0;
+        }
+
+        .option-btn.correct {
+            background-color: #00D26A !important;
+            color: white !important;
+            border-color: #00B85C !important;
+            box-shadow: 0 5px 0 #00994D !important;
+        }
+
+        .option-btn.wrong {
+            background-color: #FF4757 !important;
+            color: white !important;
+            border-color: #E03947 !important;
+            box-shadow: 0 5px 0 #C0392B !important;
+        }
+
+        .option-btn:disabled {
+            cursor: default;
+            opacity: 0.95;
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 22px;
+            background: #EBF8FF;
+            border: 2px solid #63B3ED;
+            border-radius: 18px;
+            padding: 22px;
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        .explanation-title {
+            font-weight: 900;
+            color: #2B6CB0;
+            font-size: 1.1rem;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px dashed #90CDF4;
+            padding-bottom: 8px;
+        }
+
+        .exp-section {
+            margin-bottom: 14px;
+        }
+
+        .exp-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-section-title {
+            font-weight: 800;
+            color: #2D3748;
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+        }
+
+        .options-breakdown-list {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 6px 0;
+            border: 1px solid #CBD5E0;
+        }
+
+        .option-breakdown-item {
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #4A5568;
+            line-height: 1.5;
+        }
+
+        .option-breakdown-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .submit-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .submit-btn {
+            background: #00C9A7;
+            color: white;
+            font-size: 1.45rem;
+            font-weight: 900;
+            padding: 18px 54px;
+            border: none;
+            border-radius: 28px;
+            box-shadow: 0 8px 0 #00967D;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 0 #00967D;
+            background: #00E6BE;
+        }
+
+        .submit-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 0 #00967D;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 28px;
+            padding: 35px 28px;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            position: relative;
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-score {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #8854C0;
+            margin: 15px 0;
+        }
+
+        .modal-feedback {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #2D3748;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            background: #F7FAFC;
+            padding: 18px;
+            border-radius: 18px;
+            border: 2px solid #E2E8F0;
+        }
+
+        .modal-close-btn {
+            background: #8854C0;
+            color: white;
+            font-weight: 900;
+            font-size: 1.15rem;
+            padding: 14px 36px;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 5px 0 #5f3396;
+            cursor: pointer;
+        }
+
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-pattern"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="teacher-badge">Giáo viên tạo: Ms Lê Hằng English</div>
+            <h1 class="main-title">TEST FOR UNIT 8 - BÀI KIỂM TRA TỔNG HỢP (50 CÂU)</h1>
+        </header>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <div class="warning-title">⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</div>
+            <div class="warning-text">
+                Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng và cấu trúc mới vào vở để học thì mới thực sự giỏi lên.<br>
+                Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!
+                <span class="warning-highlight">* Kéo tới đâu, làm tới đó! *</span>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container"></div>
+
+        <!-- Submit Button -->
+        <div class="submit-section">
+            <button class="submit-btn" onclick="submitQuiz()">🎉 NỘP BÀI THI 🎉</button>
+        </div>
+    </div>
+
+    <!-- Modal Score Popup -->
+    <div class="modal-overlay" id="scoreModal">
+        <div class="modal-content">
+            <h2 style="font-size:1.8rem; font-weight:900; color:#2D3748;">KẾT QUẢ BÀI THI</h2>
+            <div class="modal-score" id="scoreDisplay">0 / 50</div>
+            <div class="modal-feedback" id="feedbackDisplay"></div>
+            <button class="modal-close-btn" onclick="closeModal()">Xem lại bài làm</button>
+        </div>
+    </div>
+
+    <script>
+        const rawQuizData = [
+            // ERROR IDENTIFICATION (1 - 5)
+            {
+                id: 1,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 1. The two parties managed to newcomer their differences on the issue.",
+                options: [
+                    "the",
+                    "managed",
+                    "newcomer",
+                    "on"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Hai bên đã xoay sở giải quyết được những bất đồng của họ về vấn đề này.",
+                optionsBreakdown: [
+                    "A. the (mạo từ xác định): đứng trước danh từ two parties.",
+                    "B. managed (động từ quá khứ): đã xoay sở, đã thành công.",
+                    "C. newcomer (danh từ): người mới đến (bị dùng sai từ).",
+                    "D. on (giới từ): về vấn đề gì đó."
+                ],
+                whyCorrect: "Cấu trúc ngữ pháp 'manage + to V-bare' yêu cầu một động từ nguyên mẫu đứng sau to. Từ 'newcomer' là một danh từ nghĩa là người mới đến. Do đó 'newcomer' bị dùng sai từ và phải sửa thành động từ 'overcome' hoặc 'resolve' để hợp nghĩa.",
+                whyOthersWrong: "Đáp án A dùng đúng mạo từ the. Đáp án B chia đúng thì quá khứ đơn theo chủ ngữ. Đáp án D dùng đúng giới từ on khi nói về một vấn đề."
+            },
+            {
+                id: 2,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 2. Some low-paid workers supplement their outcome with second jobs.",
+                options: [
+                    "outcome",
+                    "low-paid",
+                    "jobs",
+                    "supplement"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Một số công nhân nhận lương thấp bổ sung thu nhập của họ bằng các công việc thứ hai.",
+                optionsBreakdown: [
+                    "A. outcome (danh từ): kết quả, hậu quả (bị dùng sai từ).",
+                    "B. low-paid (tính từ): được trả lương thấp.",
+                    "C. jobs (danh từ số nhiều): công việc.",
+                    "D. supplement (động từ): bổ sung."
+                ],
+                whyCorrect: "Từ 'outcome' có nghĩa là kết quả hoặc hậu quả của một sự việc. Trong ngữ cảnh bổ sung thu nhập tài chính, từ đúng phải là 'income' (thu nhập). Do đó từ 'outcome' là lỗi sai cần sửa thành 'income'.",
+                whyOthersWrong: "Đáp án B dùng đúng tính từ bổ nghĩa cho workers. Đáp án C dùng đúng danh từ số nhiều sau second. Đáp án D dùng đúng động từ supplement."
+            },
+            {
+                id: 3,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 3. You need a password to get come to the computer system.",
+                options: [
+                    "a",
+                    "the",
+                    "system",
+                    "come"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Bạn cần một mật khẩu để truy cập vào hệ thống máy tính.",
+                optionsBreakdown: [
+                    "A. a (mạo từ không xác định): một.",
+                    "B. the (mạo từ xác định): đứng trước computer system.",
+                    "C. system (danh từ): hệ thống.",
+                    "D. come (động từ): đến, tới (bị dùng thừa hoặc sai cấu trúc)."
+                ],
+                whyCorrect: "Cụm từ truy cập vào cái gì là 'get access to something'. Trong câu gốc từ 'come' bị thừa và dùng sai. Do đó từ 'come' là lỗi sai cần sửa thành danh từ 'access'.",
+                whyOthersWrong: "Đáp án A dùng đúng mạo từ đi với danh từ đếm được số ít password. Đáp án B dùng đúng mạo từ xác định. Đáp án C dùng đúng dạng danh từ system."
+            },
+            {
+                id: 4,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 4. Some children forgo a complete transformation when they become teenagers.",
+                options: [
+                    "transformation",
+                    "forgo",
+                    "become",
+                    "teenagers"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Một số trẻ em trải qua một sự biến đổi hoàn toàn khi chúng trở thành thanh thiếu niên.",
+                optionsBreakdown: [
+                    "A. transformation (danh từ): sự biến đổi, sự thay đổi.",
+                    "B. forgo (động từ): từ bỏ, bỏ qua (bị dùng sai từ).",
+                    "C. become (động từ): trở thành.",
+                    "D. teenagers (danh từ số nhiều): thanh thiếu niên."
+                ],
+                whyCorrect: "Động từ 'forgo' có nghĩa là từ bỏ hoặc kiêng cữ cái gì đó. Trong khi đó cụm từ trải qua một sự biến đổi phải dùng động từ 'undergo'. Do đó từ 'forgo' bị dùng sai từ và phải sửa thành 'undergo'.",
+                whyOthersWrong: "Đáp án A dùng đúng danh từ transformation đứng sau tính từ complete. Đáp án C chia đúng thì hiện tại đơn. Đáp án D dùng đúng danh từ số nhiều teenagers."
+            },
+            {
+                id: 5,
+                section: "ERROR IDENTIFICATION",
+                instruction: "ERROR IDENTIFICATION (Tìm lỗi sai trong câu)",
+                text: "Question 5. Archie said Horn meshes well with the team because he's more ongoing than Odom.",
+                options: [
+                    "said",
+                    "well",
+                    "the",
+                    "ongoing"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Archie nói rằng Horn ăn ý rất tốt với toàn đội vì anh ấy cởi mở và hòa đồng hơn Odom.",
+                optionsBreakdown: [
+                    "A. said (động từ quá khứ): đã nói.",
+                    "B. well (trạng từ): tốt, giỏi.",
+                    "C. the (mạo từ xác định): đứng trước danh từ team.",
+                    "D. ongoing (tính từ): đang diễn ra (bị dùng sai từ chỉ tính cách)."
+                ],
+                whyCorrect: "Tính từ 'ongoing' có nghĩa là đang diễn ra hoặc tiếp tục. Để mô tả tính cách cởi mở, hòa đồng của một người, từ đúng phải là 'outgoing'. Do đó từ 'ongoing' bị dùng sai và phải sửa thành 'outgoing'.",
+                whyOthersWrong: "Đáp án A dùng đúng động từ tường thuật said. Đáp án B dùng đúng trạng từ well bổ nghĩa cho động từ meshes. Đáp án C dùng đúng mạo từ the."
+            },
+
+            // WORD PATTERNS (6 - 13)
+            {
+                id: 6,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc cụm động từ)",
+                text: "Question 6. I'm sorry, I didn't mean to back _______ you.",
+                options: [
+                    "onto",
+                    "into",
+                    "up",
+                    "out"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Tôi xin lỗi, tôi không cố ý lùi xe đụng phải bạn đâu.",
+                optionsBreakdown: [
+                    "A. onto (giới từ): lên trên.",
+                    "B. into (giới từ): vào trong, đụng phải.",
+                    "C. up (trạng từ/giới từ): lên trên.",
+                    "D. out (trạng từ/giới từ): ra ngoài."
+                ],
+                whyCorrect: "Cụm động từ 'back into somebody/something' có nghĩa là lùi xe cộ và vô tình va chạm/đụng phải ai đó hoặc vật gì đó.",
+                whyOthersWrong: "Đáp án A back onto có nghĩa là quay lưng về phía. Đáp án C back up có nghĩa là sao lưu hoặc ủng hộ. Đáp án D back out có nghĩa là rút lui khỏi thỏa thuận."
+            },
+            {
+                id: 7,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc cụm từ cố định)",
+                text: "Question 7. He's a brutal tyrant - that's how he _______ into power.",
+                options: [
+                    "came",
+                    "went",
+                    "keen",
+                    "seize"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Hắn là một kẻ bạo chúa tàn bạo - đó là cách hắn đã lên nắm quyền.",
+                optionsBreakdown: [
+                    "A. came (động từ quá khứ): đã đến, đã lên.",
+                    "B. went (động từ quá khứ): đã đi.",
+                    "C. keen (tính từ): hăng hái, tha thiết.",
+                    "D. seize (động từ nguyên mẫu): nắm lấy, cướp lấy."
+                ],
+                whyCorrect: "Cụm từ cố định 'come into power' có nghĩa là lên nắm quyền lực / bắt đầu cầm quyền.",
+                whyOthersWrong: "Đáp án B không đi với into power. Đáp án C là tính từ không đứng sau chủ ngữ he làm động từ chính. Đáp án D nếu dùng seize power thì không có giới từ into."
+            },
+            {
+                id: 8,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc thành ngữ cố định)",
+                text: "Question 8. The speaker really drove his _______ home, repeating his main point several times.",
+                options: [
+                    "prong",
+                    "spot",
+                    "point",
+                    "nib"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Diễn giả đã thực sự làm cho quan điểm của mình được hiểu rõ ràng bằng cách lặp lại ý chính nhiều lần.",
+                optionsBreakdown: [
+                    "A. prong (danh từ): răng nanh, ngạnh.",
+                    "B. spot (danh từ): địa điểm, dấu vết.",
+                    "C. point (danh từ): điểm, quan điểm, ý chính.",
+                    "D. nib (danh từ): ngòi bút."
+                ],
+                whyCorrect: "Thành ngữ cố định 'drive one's point home' có nghĩa là làm cho người khác hiểu rõ ràng hoặc thấm khía luận điểm của mình.",
+                whyOthersWrong: "Các danh từ prong, spot, nib không nằm trong thành ngữ drive one's point home."
+            },
+            {
+                id: 9,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc giới từ đi với động từ)",
+                text: "Question 9. I dropped him _______ the library and went shopping.",
+                options: [
+                    "to",
+                    "out",
+                    "behind",
+                    "at"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Tôi đã chở anh ấy đến thả ở thư viện rồi đi mua sắm.",
+                optionsBreakdown: [
+                    "A. to (giới từ): đến, tới.",
+                    "B. out (trạng từ/giới từ): ra ngoài.",
+                    "C. behind (giới từ): phía sau.",
+                    "D. at (giới từ): tại, ở."
+                ],
+                whyCorrect: "Cụm động từ 'drop somebody at a place' có nghĩa là chở ai đó đến một địa điểm và cho họ xuống xe.",
+                whyOthersWrong: "Các giới từ to, out, behind không kết hợp với drop somebody để mang nghĩa chở ai thả xuống tại địa điểm cụ thể."
+            },
+            {
+                id: 10,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc cụm động từ chỉ trạng thái)",
+                text: "Question 10. Dozens of workers _______ ill from exposure to the fumes.",
+                options: [
+                    "fell",
+                    "spoke",
+                    "bide",
+                    "augured"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Hàng chục công nhân đã bị ốm do tiếp xúc với khói độc.",
+                optionsBreakdown: [
+                    "A. fell (động từ quá khứ): đã rơi vào, đã bị.",
+                    "B. spoke (động từ quá khứ): đã nói.",
+                    "C. bide (động từ nguyên mẫu): chờ đợi.",
+                    "D. augured (động từ quá khứ): đã báo hiệu."
+                ],
+                whyCorrect: "Cụm động từ cố định 'fall ill' có nghĩa là bị ốm hoặc ngã bệnh.",
+                whyOthersWrong: "Các động từ spoke, bide, augured không kết hợp với tính từ ill để tạo thành cụm từ mang nghĩa ngã bệnh."
+            },
+            {
+                id: 11,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc cụm động từ chỉ thời gian)",
+                text: "Question 11. My holiday seems to have flown _______ this year.",
+                options: [
+                    "to",
+                    "out",
+                    "by",
+                    "in"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Kỳ nghỉ của tôi dường như đã trôi qua rất nhanh trong năm nay.",
+                optionsBreakdown: [
+                    "A. to (giới từ): đến, tới.",
+                    "B. out (trạng từ/giới từ): ra ngoài.",
+                    "C. by (trạng từ/giới từ): qua, ngang qua.",
+                    "D. in (giới từ): trong."
+                ],
+                whyCorrect: "Cụm động từ 'fly by' có nghĩa là thời gian trôi qua một cách vô cùng nhanh chóng.",
+                whyOthersWrong: "Các trạng từ to, out, in không kết hợp với fly để mang nghĩa thời gian trôi qua nhanh."
+            },
+            {
+                id: 12,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc thành ngữ cố định)",
+                text: "Question 12. When one airline reduces its ticket prices, the rest usually follow _______.",
+                options: [
+                    "concert",
+                    "suit",
+                    "shadow",
+                    "bent"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Khi một hãng hàng không giảm giá vé, những hãng còn lại thường làm theo tương tự.",
+                optionsBreakdown: [
+                    "A. concert (danh từ): buổi hòa nhạc.",
+                    "B. suit (danh từ): bộ nước bài, bộ quần áo.",
+                    "C. shadow (danh từ): cái bóng.",
+                    "D. bent (danh từ/tính từ): khuynh hướng, bị cong."
+                ],
+                whyCorrect: "Thành ngữ cố định 'follow suit' có nghĩa là làm theo hành động của người khác, bắt chước hành vi của người trước.",
+                whyOthersWrong: "Các danh từ concert, shadow, bent không nằm trong thành ngữ follow suit."
+            },
+            {
+                id: 13,
+                section: "WORD PATTERNS",
+                instruction: "WORD PATTERNS (Cấu trúc cụm động từ cố định)",
+                text: "Question 13. If you want to finish that job on time, you'd better _______ going.",
+                options: [
+                    "go",
+                    "get",
+                    "turn",
+                    "write"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Nếu bạn muốn hoàn thành công việc đó đúng hạn, tốt nhất bạn nên bắt tay vào làm ngay đi.",
+                optionsBreakdown: [
+                    "A. go (động từ nguyên mẫu): đi.",
+                    "B. get (động từ nguyên mẫu): lấy, bắt đầu.",
+                    "C. turn (động từ nguyên mẫu): xoay, rẽ.",
+                    "D. write (động từ nguyên mẫu): viết."
+                ],
+                whyCorrect: "Thành ngữ / Cụm động từ cố định 'get going' có nghĩa là bắt đầu khởi hành hoặc bắt tay vào làm việc gì đó ngay lập tức.",
+                whyOthersWrong: "Các động từ go, turn, write không tạo thành cụm từ get going với ý nghĩa bắt đầu làm việc."
+            },
+
+            // PHRASES AND COLLOCATIONS (14 - 26)
+            {
+                id: 14,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ giao tiếp)",
+                text: "Question 14. Well, he's _______ and done it again, hasn't he?",
+                options: [
+                    "gone",
+                    "flied",
+                    "moved",
+                    "jumped"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Chà, anh ta lại trót làm điều ngốc nghếch đó một lần nữa rồi, phải không?",
+                optionsBreakdown: [
+                    "A. gone (phân từ 2 của go): đi, trót làm.",
+                    "B. flied (dạng sai của fly): bay.",
+                    "C. moved (phân từ 2 của move): di chuyển.",
+                    "D. jumped (phân từ 2 của jump): nhảy."
+                ],
+                whyCorrect: "Cấu trúc nhấn mạnh trong giao tiếp 'go and do something' (ở dạng quá khứ/hoàn thành là 'has gone and done something') dùng để nói về việc ai đó lại trót làm một hành động dại dột hoặc ngốc nghếch.",
+                whyOthersWrong: "Các phân từ flied, moved, jumped không dùng trong cấu trúc nhấn mạnh giao tiếp này."
+            },
+            {
+                id: 15,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm động từ chỉ hướng đi)",
+                text: "Question 15. Next we head _______ Adventureland and New Orleans Square, swilling smoothies.",
+                options: [
+                    "front",
+                    "ahead",
+                    "toward",
+                    "forward"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Tiếp theo chúng tôi đi về phía Adventureland và Quảng trường New Orleans, vừa đi vừa uống sinh tố.",
+                optionsBreakdown: [
+                    "A. front (danh từ/tính từ): phía trước.",
+                    "B. ahead (trạng từ): về phía trước.",
+                    "C. toward (giới từ): hướng về phía, về phía.",
+                    "D. forward (trạng từ): tiến về phía trước."
+                ],
+                whyCorrect: "Cụm động từ 'head toward a place' có nghĩa là di chuyển hoặc hướng về phía một địa điểm cụ thể.",
+                whyOthersWrong: "Đáp án A front là danh từ. Đáp án B ahead và D forward là trạng từ không đi trực tiếp với tên địa danh mà không có giới từ."
+            },
+            {
+                id: 16,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 16. Many people _______ at the chance to work overseas, seeing it as a way of earning far more than they could in their own country.",
+                options: [
+                    "have",
+                    "get",
+                    "make",
+                    "jump"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Nhiều người hăm hở chộp lấy cơ hội làm việc ở nước ngoài, coi đó là một cách kiếm được nhiều tiền hơn hẳn ở quốc gia của họ.",
+                optionsBreakdown: [
+                    "A. have (động từ nguyên mẫu): có.",
+                    "B. get (động từ nguyên mẫu): lấy, nhận.",
+                    "C. make (động từ nguyên mẫu): làm, tạo ra.",
+                    "D. jump (động từ nguyên mẫu): nhảy, chộp lấy."
+                ],
+                whyCorrect: "Thành ngữ cố định 'jump at the chance / opportunity' có nghĩa là hăm hở nắm lấy hoặc chộp lấy cơ hội ngay lập tức.",
+                whyOthersWrong: "Các động từ have, get, make không đi với at the chance để tạo thành thành ngữ chộp lấy cơ hội."
+            },
+            {
+                id: 17,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ giao tiếp cố định)",
+                text: "Question 17. We'd better _______ it if we don't want to be late.",
+                options: [
+                    "move",
+                    "change",
+                    "go",
+                    "arrive"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Chúng ta tốt nhất nên khẩn trương nhanh chân lên nếu không muốn bị trễ.",
+                optionsBreakdown: [
+                    "A. move (động từ nguyên mẫu): di chuyển, khẩn trương.",
+                    "B. change (động từ nguyên mẫu): thay đổi.",
+                    "C. go (động từ nguyên mẫu): đi.",
+                    "D. arrive (động từ nguyên mẫu): đến nơi."
+                ],
+                whyCorrect: "Thành ngữ giao tiếp 'move it!' có nghĩa là khẩn trương lên, nhanh chân lên.",
+                whyOthersWrong: "Các động từ change, go, arrive không đi với it để tạo thành khẩu ngữ giục giã khẩn trương."
+            },
+            {
+                id: 18,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm động từ cố định)",
+                text: "Question 18. We haven't got all day, so please get _______ the point.",
+                options: [
+                    "up",
+                    "to",
+                    "away",
+                    "in"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Chúng tôi không có cả ngày đâu, vì vậy làm ơn hãy đi thẳng vào vấn đề đi.",
+                optionsBreakdown: [
+                    "A. up (trạng từ/giới từ): lên trên.",
+                    "B. to (giới từ): đến, tới.",
+                    "C. away (trạng từ): xa ra.",
+                    "D. in (giới từ): vào trong."
+                ],
+                whyCorrect: "Cụm từ cố định 'get to the point' có nghĩa là đi thẳng vào trọng tâm / vấn đề chính mà không nói lan man.",
+                whyOthersWrong: "Các giới từ up, away, in không kết hợp với get the point để tạo thành cụm từ đi thẳng vào vấn đề."
+            },
+            {
+                id: 19,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Kết hợp từ cố định)",
+                text: "Question 19. She raised a _______ before she went to college.",
+                options: [
+                    "house",
+                    "kin",
+                    "family",
+                    "lineage"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Cô ấy đã nuôi nấng một gia đình trước khi cô ấy vào đại học.",
+                optionsBreakdown: [
+                    "A. house (danh từ): ngôi nhà.",
+                    "B. kin (danh từ): dòng họ, người thân.",
+                    "C. family (danh từ): gia đình.",
+                    "D. lineage (danh từ): dòng dõi, nòi giống."
+                ],
+                whyCorrect: "Kết hợp từ cố định (Collocation) 'raise a family' có nghĩa là nuôi nấng / gầy dựng một gia đình.",
+                whyOthersWrong: "Các từ house, kin, lineage không kết hợp với raise để mang nghĩa gầy dựng nuôi nấng gia đình."
+            },
+            {
+                id: 20,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 20. The children were running _______ in the garden.",
+                options: [
+                    "fun",
+                    "riot",
+                    "past",
+                    "time"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Mấy đứa trẻ đang chạy nhảy lung tung mất kiểm soát trong vườn.",
+                optionsBreakdown: [
+                    "A. fun (danh từ/tính từ): niềm vui, vui vẻ.",
+                    "B. riot (danh từ): sự hỗn loạn, cuộc bạo động.",
+                    "C. past (giới từ/danh từ): qua, quá khứ.",
+                    "D. time (danh từ): thời gian."
+                ],
+                whyCorrect: "Thành ngữ 'run riot' có nghĩa là hoành hành, chạy nhảy hỗn loạn hoặc mất kiểm soát.",
+                whyOthersWrong: "Các từ fun, past, time không kết hợp với run để tạo thành thành ngữ hỗn loạn mất kiểm soát."
+            },
+            {
+                id: 21,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Kết hợp từ cố định)",
+                text: "Question 21. It was a _______ rush to get everything done in time.",
+                options: [
+                    "mad",
+                    "late",
+                    "sudden",
+                    "bad"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Đó là một sự cuống cuồng vội vã để hoàn thành mọi thứ đúng giờ.",
+                optionsBreakdown: [
+                    "A. mad (tính từ): điên cuồng, cuống cuồng.",
+                    "B. late (tính từ): trễ, muộn.",
+                    "C. sudden (tính từ): đột ngột.",
+                    "D. bad (tính từ): tồi, tệ."
+                ],
+                whyCorrect: "Kết hợp từ cố định 'a mad rush' có nghĩa là sự cuống cuồng, vội vã điên cuồng làm việc gì đó.",
+                whyOthersWrong: "Các tính từ late, sudden, bad không ghép với rush để tạo thành cụm từ cố định a mad rush."
+            },
+            {
+                id: 22,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 22. She took a drink to try to steady her _______.",
+                options: [
+                    "reduction",
+                    "growth",
+                    "flow",
+                    "nerves"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Cô ấy uống một ngụm nước để cố gắng trấn an tinh thần / làm dịu thần kinh.",
+                optionsBreakdown: [
+                    "A. reduction (danh từ): sự giảm giá, sự cắt giảm.",
+                    "B. growth (danh từ): sự phát triển, sự tăng trưởng.",
+                    "C. flow (danh từ): dòng chảy.",
+                    "D. nerves (danh từ số nhiều): dây thần kinh, sự bình tĩnh."
+                ],
+                whyCorrect: "Thành ngữ cố định 'steady one's nerves' có nghĩa là lấy lại sự bình tĩnh / làm dịu cảm giác lo lắng.",
+                whyOthersWrong: "Các danh từ reduction, growth, flow không kết hợp với steady để mang nghĩa trấn an tinh thần."
+            },
+            {
+                id: 23,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm động từ cố định)",
+                text: "Question 23. My sister has had so many different jobs, it's hard for me to _______ track of what she's doing.",
+                options: [
+                    "keep",
+                    "start",
+                    "go",
+                    "begin"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Chị tôi đã làm rất nhiều công việc khác nhau, thật khó để tôi theo dõi thông tin về những gì chị ấy đang làm.",
+                optionsBreakdown: [
+                    "A. keep (động từ nguyên mẫu): giữ, theo dõi.",
+                    "B. start (động từ nguyên mẫu): bắt đầu.",
+                    "C. go (động từ nguyên mẫu): đi.",
+                    "D. begin (động từ nguyên mẫu): bắt đầu."
+                ],
+                whyCorrect: "Cụm từ cố định 'keep track of somebody/something' có nghĩa là theo dõi, nắm bắt thông tin diễn biến của ai hoặc cái gì.",
+                whyOthersWrong: "Các động từ start, go, begin không kết hợp với track of để tạo thành cụm từ nắm bắt thông tin."
+            },
+            {
+                id: 24,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 24. I lost my _______ while hiking.",
+                options: [
+                    "street",
+                    "road",
+                    "way",
+                    "avenue"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Tôi đã bị lạc đường trong khi đi bộ đường dài.",
+                optionsBreakdown: [
+                    "A. street (danh từ): con đường phố.",
+                    "B. road (danh từ): con đường lớn.",
+                    "C. way (danh từ): lối đi, hướng đi.",
+                    "D. avenue (danh từ): đại lộ."
+                ],
+                whyCorrect: "Thành ngữ 'lose one's way' có nghĩa là bị lạc đường / mất phương hướng.",
+                whyOthersWrong: "Các danh từ street, road, avenue không kết hợp với lose one's để tạo thành thành ngữ bị lạc đường."
+            },
+            {
+                id: 25,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Cụm từ chỉ thị giác)",
+                text: "Question 25. I wasn't sure what the bunny was running from, until a dog came _______ view.",
+                options: [
+                    "about",
+                    "into",
+                    "aboard",
+                    "again"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Tôi không chắc chú thỏ đang chạy trốn cái gì, cho đến khi một chú chó xuất hiện trong tầm mắt.",
+                optionsBreakdown: [
+                    "A. about (giới từ): về, khoảng.",
+                    "B. into (giới từ): vào trong.",
+                    "C. aboard (giới từ): trên tàu/máy bay.",
+                    "D. again (trạng từ): lại một lần nữa."
+                ],
+                whyCorrect: "Cụm từ cố định 'come into view' có nghĩa là xuất hiện trong tầm mắt / lọt vào tầm nhìn.",
+                whyOthersWrong: "Các từ about, aboard, again không đi với come view để tạo thành cụm xuất hiện trong tầm mắt."
+            },
+            {
+                id: 26,
+                section: "PHRASES AND COLLOCATIONS",
+                instruction: "PHRASES AND COLLOCATIONS (Thành ngữ cố định)",
+                text: "Question 26. He _______ a few hints about some gifts he'd like to get.",
+                options: [
+                    "dropped",
+                    "went",
+                    "fell",
+                    "clutched"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Anh ấy đã úp mở gợi ý một vài món quà mà anh ấy muốn nhận.",
+                optionsBreakdown: [
+                    "A. dropped (động từ quá khứ): đã thả, đã đưa ra.",
+                    "B. went (động từ quá khứ): đã đi.",
+                    "C. fell (động từ quá khứ): đã ngã.",
+                    "D. clutched (động từ quá khứ): đã nắm chặt."
+                ],
+                whyCorrect: "Thành ngữ 'drop a hint / drop hints' có nghĩa là đưa ra lời gợi ý gián tiếp hoặc úp mở cho ai biết.",
+                whyOthersWrong: "Các động từ went, fell, clutched không đi với a hint để mang nghĩa úp mở gợi ý."
+            },
+
+            // VOCABULARY IN CONTRAST (27 - 34)
+            {
+                id: 27,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 27. Exposure to the sun can _______ the ageing process.",
+                options: [
+                    "drift",
+                    "descend",
+                    "approach",
+                    "accelerate"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Việc tiếp xúc với ánh nắng mặt trời có thể đẩy nhanh quá trình lão hóa.",
+                optionsBreakdown: [
+                    "A. drift (động từ): trôi dạt.",
+                    "B. descend (động từ): đi xuống, hạ xuống.",
+                    "C. approach (động từ): tiếp cận.",
+                    "D. accelerate (động từ): đẩy nhanh, gia tốc."
+                ],
+                whyCorrect: "Động từ 'accelerate' có nghĩa là làm cho cái gì đó diễn ra nhanh hơn (đẩy nhanh quá trình lão hóa).",
+                whyOthersWrong: "Đáp án A drift trôi dạt. Đáp án B descend đi xuống. Đáp án C approach tiếp cận không hợp nghĩa."
+            },
+            {
+                id: 28,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 28. The ball _______ twice before he could reach it.",
+                options: [
+                    "bobbed",
+                    "jumped",
+                    "bounced",
+                    "dropped"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Quả bóng đã nảy lên hai lần trước khi anh ấy có thể với tới nó.",
+                optionsBreakdown: [
+                    "A. bobbed (động từ quá khứ): đã nhấp nhô.",
+                    "B. jumped (động từ quá khứ): đã nhảy.",
+                    "C. bounced (động từ quá khứ): đã nảy, đã tưng lên.",
+                    "D. dropped (động từ quá khứ): đã rơi xuống."
+                ],
+                whyCorrect: "Động từ 'bounce' chỉ hành động của quả bóng nảy tưng lên trên bề mặt cứng.",
+                whyOthersWrong: "Đáp án A bobbed dùng cho vật nhấp nhô trên mặt nước. Đáp án B jumped dùng cho người hoặc con vật nhảy. Đáp án D dropped chỉ sự rơi xuống."
+            },
+            {
+                id: 29,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 29. Through _______ teeth she told him to leave.",
+                options: [
+                    "ascended",
+                    "clenched",
+                    "crawled",
+                    "emigrated"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Qua kẽ răng nghiến chặt, cô ấy bảo anh ta hãy rời đi.",
+                optionsBreakdown: [
+                    "A. ascended (tính từ/phân từ): đã trèo lên.",
+                    "B. clenched (tính từ/phân từ): được nghiến chặt, cắn chặt.",
+                    "C. crawled (tính từ/phân từ): đã bò.",
+                    "D. emigrated (tính từ/phân từ): đã di cư."
+                ],
+                whyCorrect: "Cụm từ 'clenched teeth' chỉ việc cắn chặt hoặc nghiến răng thể hiện sự tức giận.",
+                whyOthersWrong: "Các từ ascended, crawled, emigrated không đi với teeth để chỉ việc nghiến răng."
+            },
+            {
+                id: 30,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 30. I _______ up the stairs, trying not to wake my parents.",
+                options: [
+                    "rotated",
+                    "rolled",
+                    "sneaked",
+                    "crept"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Tôi rón rén đi lên cầu thang, cố gắng không làm bố mẹ thức giấc.",
+                optionsBreakdown: [
+                    "A. rotated (động từ quá khứ): đã xoay tròn.",
+                    "B. rolled (động từ quá khứ): đã lăn.",
+                    "C. sneaked (động từ quá khứ): đã lẻn.",
+                    "D. crept (động từ quá khứ của creep): đã rón rén bò hoặc đi nhẹ nhàng."
+                ],
+                whyCorrect: "Động từ 'creep' (quá khứ là crept) có nghĩa là đi rón rén, di chuyển nhẹ nhàng không gây ra tiếng động.",
+                whyOthersWrong: "Đáp án A rotated xoay. Đáp án B rolled lăn. Đáp án C sneaked thường cần trạng từ chỉ hướng lén lút rõ hơn."
+            },
+            {
+                id: 31,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 31. Many people who _______ experienced poverty and racism when they arrived.",
+                options: [
+                    "emigrated",
+                    "flew",
+                    "clutched",
+                    "expected"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Nhiều người di cư đã phải trải qua sự nghèo khổ và phân biệt chủng tộc khi họ đến nơi.",
+                optionsBreakdown: [
+                    "A. emigrated (động từ quá khứ): đã di cư.",
+                    "B. flew (động từ quá khứ): đã bay.",
+                    "C. clutched (động từ quá khứ): đã nắm chặt.",
+                    "D. expected (động từ quá khứ): đã kỳ vọng."
+                ],
+                whyCorrect: "Động từ 'emigrate' chỉ việc di cư rời khỏi quê hương đến sống ở một quốc gia khác.",
+                whyOthersWrong: "Các động từ flew, clutched, expected không diễn tả đúng hành động di cư sinh sống ở nước ngoài."
+            },
+            {
+                id: 32,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 32. I _______ to zip up my jacket.",
+                options: [
+                    "loaded",
+                    "fumbled",
+                    "chartered",
+                    "engaged"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Tôi lúng túng dò dẫm mãi mới kéo được khóa kéo áo khoác lên.",
+                optionsBreakdown: [
+                    "A. loaded (động từ quá khứ): đã chất hàng.",
+                    "B. fumbled (động từ quá khứ): đã lúng túng, dò dẫm vụng về.",
+                    "C. chartered (động từ quá khứ): đã thuê riêng.",
+                    "D. engaged (động từ quá khứ): đã đính hôn, tham gia."
+                ],
+                whyCorrect: "Động từ 'fumble' chỉ hành động làm việc gì một cách lúng túng, vụng về bằng tay (như kéo khóa áo).",
+                whyOthersWrong: "Các động từ loaded, chartered, engaged không miêu tả hành động lúng túng vụng về của bàn tay."
+            },
+            {
+                id: 33,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 33. She _______ his arm as he got up to leave.",
+                options: [
+                    "glided",
+                    "dropped",
+                    "grabbed",
+                    "slipped"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Cô ấy đã chộp lấy tay anh khi anh đứng dậy rời đi.",
+                optionsBreakdown: [
+                    "A. glided (động từ quá khứ): đã lướt đi.",
+                    "B. dropped (động từ quá khứ): đã thả rơi.",
+                    "C. grabbed (động từ quá khứ): đã túm lấy, chộp lấy.",
+                    "D. slipped (động từ quá khứ): đã trượt."
+                ],
+                whyCorrect: "Động từ 'grab' có nghĩa là nắm lấy, túm lấy hoặc chộp lấy ai hoặc cái gì một cách nhanh chóng đột ngột.",
+                whyOthersWrong: "Các động từ glided, dropped, slipped không mang nghĩa giữ ai lại bằng cách túm lấy tay."
+            },
+            {
+                id: 34,
+                section: "VOCABULARY IN CONTRAST",
+                instruction: "VOCABULARY IN CONTRAST (Từ vựng phân biệt)",
+                text: "Question 34. Soldiers were _______ up and down outside the government buildings.",
+                options: [
+                    "firing",
+                    "sacking",
+                    "striking",
+                    "marching"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Các binh sĩ đang diễu hành / hành quân đi qua đi lại bên ngoài các tòa nhà chính phủ.",
+                optionsBreakdown: [
+                    "A. firing (danh động từ/hiện tại phân từ): đang bắn súng.",
+                    "B. sacking (danh động từ/hiện tại phân từ): đang sa thải.",
+                    "C. striking (danh động từ/hiện tại phân từ): đang đình công.",
+                    "D. marching (danh động từ/hiện tại phân từ): đang diễu hành, hành quân."
+                ],
+                whyCorrect: "Động từ 'march up and down' miêu tả hành động hành quân hoặc diễu hành nghiêm trang của người lính.",
+                whyOthersWrong: "Các từ firing, sacking, striking không đi với up and down để miêu tả sự di chuyển duyệt binh của binh sĩ."
+            },
+
+            // PHRASAL VERBS (35 - 42)
+            {
+                id: 35,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 35. They've _______ off the whole area because of a suspected bomb.",
+                options: [
+                    "slacked",
+                    "rained",
+                    "cordoned",
+                    "dozed"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Họ đã phong tỏa toàn bộ khu vực vì nghi ngờ có bom.",
+                optionsBreakdown: [
+                    "A. slacked (động từ quá khứ): đã uể uải.",
+                    "B. rained (động từ quá khứ): đã mưa.",
+                    "C. cordoned (động từ quá khứ): đã giăng dây phong tỏa.",
+                    "D. dozed (động từ quá khứ): đã ngủ gật."
+                ],
+                whyCorrect: "Cụm động từ 'cordon off' có nghĩa là cách ly, giăng dây phong tỏa một khu vực nguy hiểm.",
+                whyOthersWrong: "Các động từ slacked, rained, dozed không tạo thành cụm động từ phong tỏa khu vực."
+            },
+            {
+                id: 36,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 36. All the parents _______ of the meeting in protest.",
+                options: [
+                    "walked around",
+                    "walked over",
+                    "walked off",
+                    "walked out"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Tất cả các phụ huynh đã bỏ cuộc họp ra về để phản đối.",
+                optionsBreakdown: [
+                    "A. walked around (cụm động từ): đã đi xung quanh.",
+                    "B. walked over (cụm động từ): đã đi qua.",
+                    "C. walked off (cụm động từ): đã bỏ đi.",
+                    "D. walked out (cụm động từ): đã rời bỏ họp để phản đối."
+                ],
+                whyCorrect: "Cụm động từ 'walk out of a meeting' có nghĩa là rời khỏi cuộc họp giữa chừng nhằm mục đích phản đối.",
+                whyOthersWrong: "Các cụm walked around, walked over, walked off không mang nghĩa bỏ họp ra về để phản đối."
+            },
+            {
+                id: 37,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 37. She _______ the lid of the box and look inside.",
+                options: [
+                    "tip up",
+                    "brighten up",
+                    "bottle up",
+                    "blow up"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Cô ấy nhấc nghiêng nắp hộp lên và nhìn vào bên trong.",
+                optionsBreakdown: [
+                    "A. tip up (cụm động từ): lật nghiêng, nhấc nghiêng lên.",
+                    "B. brighten up (cụm động từ): làm sáng bừng lên.",
+                    "C. bottle up (cụm động từ): dồn nén cảm xúc.",
+                    "D. blow up (cụm động từ): thổi bùng, làm nổ."
+                ],
+                whyCorrect: "Cụm động từ 'tip up' có nghĩa là nhấc nghiêng hoặc lật nghiêng một vật gì đó lên.",
+                whyOthersWrong: "Các cụm brighten up, bottle up, blow up không miêu tả hành động nhấc nghiêng nắp hộp."
+            },
+            {
+                id: 38,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 38. She knew the long list of silver almost by heart and counted it monthly that nothing might _______.",
+                options: [
+                    "make out",
+                    "go astray",
+                    "face up to",
+                    "brush up"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Cô ấy thuộc lòng danh sách đồ bạc dài ngoẵng và kiểm đếm hàng tháng để không có thứ gì bị thất lạc.",
+                optionsBreakdown: [
+                    "A. make out (cụm động từ): nhận ra, hiểu được.",
+                    "B. go astray (cụm động từ): bị thất lạc, bị mất cắp.",
+                    "C. face up to (cụm động từ): đối mặt với.",
+                    "D. brush up (cụm động từ): ôn lại kiến thức."
+                ],
+                whyCorrect: "Cụm động từ 'go astray' có nghĩa là bị thất lạc, bị đánh mất hoặc bị lấy trộm.",
+                whyOthersWrong: "Các cụm make out, face up to, brush up không mang nghĩa đồ đạc bị thất lạc."
+            },
+            {
+                id: 39,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 39. We tried to creep _______ on them but they heard our footsteps.",
+                options: [
+                    "out",
+                    "up",
+                    "around",
+                    "along"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Chúng tôi đã cố gắng rón rén tiếp cận họ nhưng họ đã nghe thấy tiếng bước chân của chúng tôi.",
+                optionsBreakdown: [
+                    "A. out (trạng từ): ra ngoài.",
+                    "B. up (trạng từ): tiến lên.",
+                    "C. around (trạng từ): xung quanh.",
+                    "D. along (trạng từ): dọc theo."
+                ],
+                whyCorrect: "Cụm động từ 'creep up on somebody' có nghĩa là rón rén áp sát hoặc tiếp cận ai đó một cách lén lút.",
+                whyOthersWrong: "Các trạng từ out, around, along không đi với creep on để tạo thành cụm rón rén áp sát ai."
+            },
+            {
+                id: 40,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 40. We're going to _______ in Denver for a couple of days before heading south.",
+                options: [
+                    "set off",
+                    "see off",
+                    "stop off",
+                    "write off"
+                ],
+                correctIndex: 2,
+                translation: "Dịch nghĩa toàn câu: Chúng tôi sẽ dừng chân nghỉ lại ở Denver một vài ngày trước khi đi về phía nam.",
+                optionsBreakdown: [
+                    "A. set off (cụm động từ): khởi hành.",
+                    "B. see off (cụm động từ): tiễn ai đó.",
+                    "C. stop off (cụm động từ): dừng chân tạt qua nghỉ lại.",
+                    "D. write off (cụm động từ): xóa nợ, hủy bỏ."
+                ],
+                whyCorrect: "Cụm động từ 'stop off' có nghĩa là dừng chân ghé lại một địa điểm trên chuyến hành trình dài.",
+                whyOthersWrong: "Các cụm set off (khởi hành), see off (tiễn biệt), write off (xóa nợ) không hợp ngữ cảnh."
+            },
+            {
+                id: 41,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 41. Evans had rheumatic fever, missed school and _______ behind.",
+                options: [
+                    "fell",
+                    "left",
+                    "looked",
+                    "shut"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Evans bị sốt thấp khớp, nghỉ học và đã bị tụt lại phía sau.",
+                optionsBreakdown: [
+                    "A. fell (động từ quá khứ của fall): đã ngã, đã bị.",
+                    "B. left (động từ quá khứ của leave): đã rời đi.",
+                    "C. looked (động từ quá khứ): đã nhìn.",
+                    "D. shut (động từ quá khứ): đã đóng."
+                ],
+                whyCorrect: "Cụm động từ 'fall behind' có nghĩa là bị tụt hậu, tụt lại phía sau so với bạn bè trong học tập.",
+                whyOthersWrong: "Các động từ left, looked, shut không đi với behind để mang nghĩa tụt hậu trong học tập."
+            },
+            {
+                id: 42,
+                section: "PHRASAL VERBS",
+                instruction: "PHRASAL VERBS (Cụm động từ)",
+                text: "Question 42. We'll head them _______ at the bridge!",
+                options: [
+                    "over",
+                    "out",
+                    "back",
+                    "off"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Chúng ta sẽ đón đầu chặn họ lại tại cây cầu!",
+                optionsBreakdown: [
+                    "A. over (trạng từ/giới từ): qua.",
+                    "B. out (trạng từ/giới từ): ra ngoài.",
+                    "C. back (trạng từ/giới từ): trở lại.",
+                    "D. off (trạng từ/giới từ): tắt, chặn."
+                ],
+                whyCorrect: "Cụm động từ 'head somebody off' có nghĩa là di chuyển lên phía trước để đón đầu hoặc chặn đường ai đó.",
+                whyOthersWrong: "Các trạng từ over, out, back không đi với head somebody để mang nghĩa chặn đường."
+            },
+
+            // SYNONYM (43 - 45)
+            {
+                id: 43,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 43. The children clambered up the steep bank.",
+                options: [
+                    "refined",
+                    "scrambled",
+                    "clamped",
+                    "grasped"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Mấy đứa trẻ đã bò trèo chật vật lên bờ đê dốc đứng.",
+                optionsBreakdown: [
+                    "A. refined (động từ quá khứ): đã tinh chế.",
+                    "B. scrambled (động từ quá khứ): đã bò trèo chật vật.",
+                    "C. clamped (động từ quá khứ): đã kẹp chặt.",
+                    "D. grasped (động từ quá khứ): đã nắm lấy."
+                ],
+                whyCorrect: "Động từ 'clamber' có nghĩa là leo trèo một cách chật vật bằng cả tay và chân, đồng nghĩa hoàn toàn với 'scramble'.",
+                whyOthersWrong: "Đáp án A tinh chế. Đáp án C kẹp chặt. Đáp án D nắm lấy không mang nghĩa leo trèo chật vật."
+            },
+            {
+                id: 44,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 44. The farm is about three miles from here as the crow flies.",
+                options: [
+                    "in danger",
+                    "in a fun way",
+                    "in a close manner",
+                    "in a straight line"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Trang trại cách đây khoảng ba dặm theo đường chim bay / đường thẳng.",
+                optionsBreakdown: [
+                    "A. in danger (cụm từ): đang gặp nguy hiểm.",
+                    "B. in a fun way (cụm từ): theo một cách vui vẻ.",
+                    "C. in a close manner (cụm từ): theo một cách gần gũi.",
+                    "D. in a straight line (cụm từ): theo một đường thẳng."
+                ],
+                whyCorrect: "Thành ngữ 'as the crow flies' có nghĩa là theo khoảng cách đường chim bay / đường thẳng, đồng nghĩa với 'in a straight line'.",
+                whyOthersWrong: "Các lựa chọn in danger, in a fun way, in a close manner không mang nghĩa đo khoảng cách theo đường thẳng."
+            },
+            {
+                id: 45,
+                section: "SYNONYM",
+                instruction: "SYNONYM (Từ đồng nghĩa)",
+                text: "Question 45. Just follow your nose until you see the school car park.",
+                options: [
+                    "go along with",
+                    "go through with",
+                    "go sightseeing",
+                    "go straight ahead"
+                ],
+                correctIndex: 3,
+                translation: "Dịch nghĩa toàn câu: Cứ đi thẳng về phía trước cho đến khi bạn nhìn thấy bãi đỗ xe của trường học.",
+                optionsBreakdown: [
+                    "A. go along with (cụm động từ): đồng ý theo.",
+                    "B. go through with (cụm động từ): hoàn thành công việc khó khăn.",
+                    "C. go sightseeing (cụm động từ): đi ngắm cảnh.",
+                    "D. go straight ahead (cụm động từ): đi thẳng về phía trước."
+                ],
+                whyCorrect: "Thành ngữ 'follow your nose' có nghĩa là đi thẳng về phía trước, đồng nghĩa hoàn toàn với 'go straight ahead'.",
+                whyOthersWrong: "Các cụm go along with, go through with, go sightseeing không có nghĩa chỉ hướng đi thẳng."
+            },
+
+            // WORD FORMATIONS (46 - 48)
+            {
+                id: 46,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 46. Penguins may be ungainly on land, but they're _______ swimmers and expert divers.",
+                options: [
+                    "speedily",
+                    "speedy",
+                    "speed",
+                    "speeding"
+                ],
+                correctIndex: 1,
+                translation: "Dịch nghĩa toàn câu: Chim cánh cụt có thể vụng về trên đất liền, nhưng chúng là những sinh vật bơi bơi lội nhanh nhẹn và những thợ lặn điêu luyện.",
+                optionsBreakdown: [
+                    "A. speedily (trạng từ): một cách nhanh chóng.",
+                    "B. speedy (tính từ): nhanh nhẹn, tốc độ.",
+                    "C. speed (danh từ): tốc độ.",
+                    "D. speeding (danh động từ): việc chạy quá tốc độ."
+                ],
+                whyCorrect: "Trước danh từ số nhiều 'swimmers' cần một tính từ bổ nghĩa. Tính từ 'speedy' (nhanh nhẹn) là lựa chọn chuẩn xác ngữ pháp.",
+                whyOthersWrong: "Đáp án A là trạng từ. Đáp án C là danh từ. Đáp án D là danh động từ chỉ hành động vi phạm tốc độ."
+            },
+            {
+                id: 47,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 47. Put a book under the table leg to keep it _______.",
+                options: [
+                    "stable",
+                    "stabilize",
+                    "stability",
+                    "stabilizer"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Hãy đặt một cuốn sách dưới chân bàn để giữ cho nó vững vàng.",
+                optionsBreakdown: [
+                    "A. stable (tính từ): vững vàng, ổn định.",
+                    "B. stabilize (động từ): làm cho ổn định.",
+                    "C. stability (danh từ): sự ổn định.",
+                    "D. stabilizer (danh từ): chất làm ổn định, bánh phụ xe đạp."
+                ],
+                whyCorrect: "Cấu trúc 'keep + something + adjective' (giữ cho cái gì ở trạng thái như thế nào). Do đó vị trí này cần tính từ 'stable'.",
+                whyOthersWrong: "Đáp án B là động từ. Đáp án C và D là danh từ không đứng sau keep it."
+            },
+            {
+                id: 48,
+                section: "WORD FORMATIONS",
+                instruction: "WORD FORMATIONS (Từ loại)",
+                text: "Question 48. The country is in _______ from an agricultural to an industrial society.",
+                options: [
+                    "transition",
+                    "transitory",
+                    "transit",
+                    "transitional"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Đất nước đang trong giai đoạn chuyển giao từ một xã hội nông nghiệp sang một xã hội công nghiệp.",
+                optionsBreakdown: [
+                    "A. transition (danh từ): sự chuyển giao, sự quá độ.",
+                    "B. transitory (tính từ): tạm thời, ngắn ngủi.",
+                    "C. transit (danh từ): sự quá cảnh.",
+                    "D. transitional (tính từ): mang tính quá độ."
+                ],
+                whyCorrect: "Cụm từ cố định 'in transition (from... to...)' có nghĩa là đang trong giai đoạn chuyển giao / quá độ từ dạng này sang dạng khác.",
+                whyOthersWrong: "Đáp án B và D là tính từ không đứng sau giới từ in. Đáp án C transit dùng cho quá cảnh sân bay."
+            },
+
+            // ANTONYM (49 - 50)
+            {
+                id: 49,
+                section: "ANTONYM",
+                instruction: "ANTONYM (Tìm từ Trái nghĩa)",
+                text: "Question 49. Players who wanted to take the short cut to the Hall of Fame are now going to have to be patient.",
+                options: [
+                    "take the long way",
+                    "look forward to",
+                    "break down",
+                    "go back a long way"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Những người chơi muốn đi đường tắt đến Đại lộ Danh vọng giờ đây sẽ phải kiên nhẫn.",
+                optionsBreakdown: [
+                    "A. take the long way (cụm động từ): đi đường dài, đi đường vòng.",
+                    "B. look forward to (cụm động từ): mong chờ.",
+                    "C. break down (cụm động từ): bị hỏng hóc, suy sụp.",
+                    "D. go back a long way (cụm động từ): quen biết nhau từ lâu."
+                ],
+                whyCorrect: "Thành ngữ 'take the short cut' có nghĩa là đi đường tắt. Do đó cụm TRÁI NGHĨA hoàn toàn là 'take the long way' (đi đường dài / đi đường vòng).",
+                whyOthersWrong: "Các cụm look forward to, break down, go back a long way không mang nghĩa trái ngược với đi đường tắt."
+            },
+            {
+                id: 50,
+                section: "ANTONYM",
+                instruction: "ANTONYM (Tìm từ Trái nghĩa)",
+                text: "Question 50. He worked his way to the top in just a few short years.",
+                options: [
+                    "fell behind",
+                    "reached out",
+                    "met with",
+                    "landed in"
+                ],
+                correctIndex: 0,
+                translation: "Dịch nghĩa toàn câu: Anh ấy đã nỗ lực vươn lên đỉnh cao sự nghiệp chỉ trong một vài năm ngắn ngủi.",
+                optionsBreakdown: [
+                    "A. fell behind (cụm động từ): bị tụt lại phía sau, thất bại.",
+                    "B. reached out (cụm động từ): tiếp cận, xòe tay ra.",
+                    "C. met with (cụm động từ): gặp gỡ.",
+                    "D. landed in (cụm động từ): rơi vào hoàn cảnh."
+                ],
+                whyCorrect: "Thành ngữ 'work one's way to the top' chỉ việc nỗ lực tự mình vươn lên đỉnh cao thành công. Do đó cụm TRÁI NGHĨA hoàn toàn là 'fell behind' (bị tụt lại phía sau / thất bại).",
+                whyOthersWrong: "Các cụm reached out, met with, landed in không mang nghĩa trái ngược với sự nỗ lực vươn lên đỉnh cao."
+            }
+        ];
+
+        // Web Audio Synth
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playDingSound() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const now = audioCtx.currentTime;
+            const osc1 = audioCtx.createOscillator();
+            const osc2 = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc1.type = 'sine';
+            osc2.type = 'triangle';
+
+            osc1.frequency.setValueAtTime(523.25, now);
+            osc1.frequency.exponentialRampToValueAtTime(1046.50, now + 0.15);
+
+            osc2.frequency.setValueAtTime(659.25, now);
+            osc2.frequency.exponentialRampToValueAtTime(1318.51, now + 0.15);
+
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start(now);
+            osc2.start(now);
+            osc1.stop(now + 0.4);
+            osc2.stop(now + 0.4);
+        }
+
+        function playWrongSound() {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(180, now);
+            osc.frequency.linearRampToValueAtTime(110, now + 0.3);
+
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.35);
+        }
+
+        function launchConfetti() {
+            const canvas = document.getElementById('confetti-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const pieces = [];
+            const numberOfPieces = 100;
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#00D26A', '#2196f3', '#03a9f4', '#ffeb3b', '#ff9800'];
+
+            for (let i = 0; i < numberOfPieces; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    rotation: Math.random() * 360,
+                    size: Math.random() * 10 + 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speed: Math.random() * 3 + 2,
+                    oscSpeed: Math.random() * 0.05 + 0.02,
+                    oscStep: Math.random() * Math.PI
+                });
+            }
+
+            let frames = 0;
+            function update() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach(p => {
+                    p.y += p.speed;
+                    p.oscStep += p.oscSpeed;
+                    p.x += Math.sin(p.oscStep) * 2;
+                    p.rotation += 2;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+
+                frames++;
+                if (frames < 120) {
+                    requestAnimationFrame(update);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+            update();
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        const userAnswers = {};
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            let currentSection = "";
+
+            rawQuizData.forEach((q) => {
+                if (q.section !== currentSection) {
+                    currentSection = q.section;
+                    const secHeader = document.createElement('div');
+                    secHeader.className = 'section-header-title';
+                    secHeader.innerText = currentSection;
+                    container.appendChild(secHeader);
+                }
+
+                // Shuffle options A, B, C, D
+                const optionsObj = q.options.map((opt, origIdx) => ({
+                    text: opt,
+                    originalIndex: origIdx
+                }));
+                const shuffledOptions = shuffleArray(optionsObj);
+
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${q.id}`;
+
+                let optionsHTML = '';
+                shuffledOptions.forEach((optObj, btnIdx) => {
+                    const letter = String.fromCharCode(65 + btnIdx);
+                    optionsHTML += `
+                        <button class="option-btn" 
+                                id="btn-${q.id}-${optObj.originalIndex}" 
+                                onclick="handleSelect(${q.id}, ${optObj.originalIndex}, ${q.correctIndex})">
+                            <strong style="margin-right:8px; min-width:24px;">${letter}.</strong> ${optObj.text}
+                        </button>
+                    `;
+                });
+
+                let breakdownHTML = q.optionsBreakdown.map(item => `<div class="option-breakdown-item">• ${item}</div>`).join('');
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <span class="question-number">Câu ${q.id}</span>
+                        <span class="question-instruction">${q.instruction}</span>
+                    </div>
+                    <div class="question-text">${q.text}</div>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    
+                    <div class="explanation-box" id="exp-${q.id}">
+                        <div class="explanation-title">💡 GIẢI THÍCH CHI TIẾT TỪ MS LÊ HẰNG ENGLISH</div>
+                        
+                        <div class="exp-section">
+                            <div class="exp-section-title">1. Dịch nghĩa toàn câu:</div>
+                            <p style="color:#2D3748; font-weight:700;">${q.translation}</p>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">2. Phân tích ngữ pháp / từ vựng cả 4 đáp án:</div>
+                            <div class="options-breakdown-list">${breakdownHTML}</div>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">3. Tại sao đáp án đúng lại đúng?</div>
+                            <p style="color:#276749; font-weight:800;">${q.whyCorrect}</p>
+                        </div>
+
+                        <div class="exp-section">
+                            <div class="exp-section-title">4. Tại sao các đáp án còn lại sai?</div>
+                            <p style="color:#C53030; font-weight:800;">${q.whyOthersWrong}</p>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function handleSelect(questionId, selectedIdx, correctIdx) {
+            if (userAnswers[questionId] !== undefined) return;
+
+            userAnswers[questionId] = selectedIdx;
+
+            const card = document.getElementById(`q-card-${questionId}`);
+            const selectedBtn = document.getElementById(`btn-${questionId}-${selectedIdx}`);
+            const correctBtn = document.getElementById(`btn-${questionId}-${correctIdx}`);
+            const expBox = document.getElementById(`exp-${questionId}`);
+
+            const allBtns = card.querySelectorAll('.option-btn');
+            allBtns.forEach(btn => btn.disabled = true);
+
+            if (selectedIdx === correctIdx) {
+                selectedBtn.classList.add('correct');
+                playDingSound();
+                launchConfetti();
+            } else {
+                selectedBtn.classList.add('wrong');
+                correctBtn.classList.add('correct');
+                card.classList.add('shake');
+                playWrongSound();
+            }
+
+            expBox.style.display = 'block';
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            const total = rawQuizData.length;
+
+            rawQuizData.forEach(q => {
+                if (userAnswers[q.id] === q.correctIndex) {
+                    score++;
+                }
+            });
+
+            const percentage = (score / total) * 100;
+            let feedback = "";
+
+            if (percentage < 50) {
+                feedback = "“Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”";
+            } else if (percentage >= 60 && percentage <= 80) {
+                feedback = "“Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!”";
+            } else {
+                feedback = "“Làm tốt lắm, con cố gắng rinh điểm 10 ở lần sau nha!”";
+            }
+
+            document.getElementById('scoreDisplay').innerText = `${score} / ${total}`;
+            document.getElementById('feedbackDisplay').innerText = feedback;
+            document.getElementById('scoreModal').style.display = 'flex';
+
+            if (percentage >= 80) {
+                launchConfetti();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('scoreModal').style.display = 'none';
+        }
+
+        window.onload = () => {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
